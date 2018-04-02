@@ -5,14 +5,14 @@
 ふたば☆ちゃんねるのスレ内の画像をページ内でギャラリー風に表示します  
 マウスホイールやカーソルキーでの前後移動も可能です  
 
-Firefoxの場合、[Greasemonkey](https://addons.mozilla.org/ja/firefox/addon/greasemonkey/)を先にインスールしてからスクリプトをインストールして下さい  
+Firefoxの場合、[Tampermonkey](https://addons.mozilla.org/ja/firefox/addon/tampermonkey/)を先にインスールしてからスクリプトをインストールして下さい  
 Chromeの場合、[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)を先にインスールしてからスクリプトをインストールして下さい  
 Opera(ver.15+)の場合、[Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/)を先にインスールしてからスクリプトをインストールして下さい  
 
-※このUserscriptは[赤福Firefox SP](http://toshiakisp.github.io/akahuku-firefox-sp/)と[ふたクロ](http://futakuro.com/)に対応しています
+※このUserscriptは[赤福Firefox SP](http://toshiakisp.github.io/akahuku-firefox-sp/)と[ふたクロ](http://futakuro.com/)と[こしあん](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)（[こしあん改](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki)）に対応しています
 
 ## インストール
-[ここ](https://github.com/himuro-majika/futaba_lightbox/raw/master/futaba_lightbox.user.js)
+[ここ](https://github.com/akoya-tomo/futaba_lightbox/raw/master/futaba_lightbox.user.js)
 
 
 ## 使い方
@@ -27,7 +27,7 @@ Opera(ver.15+)の場合、[Tampermonkey](https://addons.opera.com/extensions/det
 
 ## 制限事項
 
-* 赤福の引用ポップアップから画像を開いた場合は次の画像・前の画像の順番が正しく表示されません
+* 赤福やこしあんの引用ポップアップから画像を開いた場合は次の画像・前の画像の順番が正しく表示されません
 
 ## ライセンス
 

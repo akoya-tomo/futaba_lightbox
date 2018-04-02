@@ -7,7 +7,9 @@
 // @include     https://*.2chan.net/*/res/*
 // @include     http://board.futakuro.com/*/res/*
 // @exclude     http://img.2chan.net/*/res/*
+// @exclude     https://img.2chan.net/*/res/*
 // @exclude     http://dat.2chan.net/*/res/*
+// @exclude     https://dat.2chan.net/*/res/*
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @require     https://raw.githubusercontent.com/fancyapps/fancybox/2.1/lib/jquery.mousewheel.pack.js
 // @require     https://raw.githubusercontent.com/fancyapps/fancybox/2.1/source/jquery.fancybox.js
@@ -20,6 +22,7 @@
 // @run-at      document-idle
 // @license     MIT
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAPUExURYv4i2PQYy2aLUe0R////zorx9oAAAAFdFJOU/////8A+7YOUwAAAElJREFUeNqUj1EOwDAIQoHn/c88bX+2fq0kRsAoUXVAfwzCttWsDWzw0kNVWd2tZ5K9gqmMZB8libt4pSg6YlO3RnTzyxePAAMAzqMDgTX8hYYAAAAASUVORK5CYII=
+// @noframes
 // ==/UserScript==
 this.$ = this.jQuery = jQuery.noConflict(true);
 
@@ -37,6 +40,8 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	var USE_SCROLL = true;
 	// スクロールのなめらかさ
 	var SCROLL_DURATION = 100;
+	// KOSHIAN リロード拡張を使用する
+	var USE_KOSHIAN = true;
 
 	init();
 
@@ -49,16 +54,18 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	}
 	// スレ内の画像にクラス、rel属性を付加する
 	function add_class_and_rel() {
-		var AKAHUKU = false, FUTAKURO = false, FUTABOARD = false;
+		var AKAHUKU = false, FUTAKURO = false, FUTABOARD = false, KOSHIAN = false;
 		// 赤福が有効か
 		if ($("#akahuku_thumbnail").length) { AKAHUKU = true; }
 		// ふたクロが有効か
 		if ($("#master").length) { FUTAKURO = true; }
+		// こしあんが有効か
+		if ($("#KOSHIAN_NOTIFY").length || USE_KOSHIAN) { KOSHIAN = true; }
 		// futaboardか
 		if ($("#threadsbox").length) { FUTABOARD = true; }
 		add_class_and_rel_Thread();
 		add_class_and_rel_Res();
-		if (AKAHUKU || FUTAKURO) {
+		if (AKAHUKU || FUTAKURO || KOSHIAN) {
 			observeInserted();
 		}
 		// スレ画
